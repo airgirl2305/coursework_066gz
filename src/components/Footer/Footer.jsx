@@ -6,7 +6,7 @@ export const Footer = () => {
       <p>
         Copyright &copy; {currentYear} <b>FRCronic.</b> All rights reserved.
       </p>
-      <p>Made by <a href="https://github.com/airgirl2305">@airgirl2305</a></p>
+      <p>Made by <a  href="https://github.com/airgirl2305" target="_blank">@airgirl2305</a></p>
     </footer>
   );
 };
