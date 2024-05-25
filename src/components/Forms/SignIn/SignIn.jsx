@@ -1,9 +1,10 @@
-import styles from './Forms.module.css';
+import '../Forms.sass';
+
 export const SignIn = () => {
   return (
-    <div className={styles.signIn}>
+    <div className="sign-in">
       <section className="col-5 mx-auto pt-5">
-        <h1 className="text-center my-5">Authorization</h1>
+        <h1 className="text-center my-5">Вход</h1>
         <form action="php/authorization-processor.php" method="POST">
           <div className="input-group mb-3">
             <div className="input-group-prepend">
@@ -12,12 +13,12 @@ export const SignIn = () => {
               </div>
             </div>
             <input
-              autocomplete="email"
+              autoComplete="email"
               className="form-control form-control-lg"
-              minlength="2"
+              minLength="2"
               name="email"
-              onblur="this.placeholder='Email'"
-              onfocus="this.placeholder=''"
+              onBlur="this.placeholder='Email'"
+              onFocus="this.placeholder=''"
               placeholder="Email"
               required
               type="email"
@@ -27,16 +28,16 @@ export const SignIn = () => {
           <div className="input-group mb-3">
             <div className="input-group-prepend">
               <div className="input-group-text">
-                <span className="material-icons input-icon">password</span>
+                <span className="material-icons input-icon">пароль</span>
               </div>
             </div>
             <input
-              autocomplete="current-password"
+              autoComplete="current-password"
               className="form-control form-control-lg"
               id="formPass"
-              minlength="2"
-              onblur="this.placeholder='Your password'"
-              onfocus="this.placeholder=''"
+              minLength="2"
+              onBlur="this.placeholder='Your password'"
+              onFocus="this.placeholder=''"
               placeholder="Your password"
               required
               type="password"
@@ -45,14 +46,14 @@ export const SignIn = () => {
             <div className="input-group-text">
             <span
               className="material-icons eye-icon"
-              onmousedown="formPass.type='text';
+              onMouseDown="formPass.type='text';
                this.nextElementSibling.hidden=false; this.hidden='true';"
             >visibility</span
             >
               <span
                 className="material-icons eye-icon"
                 hidden
-                onmouseup="formPass.type = 'password'; this.previousElementSibling.hidden = false; this.hidden = true;"
+                onMouseUp="formPass.type = 'password'; this.previousElementSibling.hidden = false; this.hidden = true;"
               >visibility_off</span
               >
             </div>

@@ -1,1 +1,69 @@
+/**----------------------
+  // TODO   СКАЧАТЬ ARIAl
+ *------------------------**/
+  @font-face
+  font-family: "Pacifico"
+  src: url('./fonts/Pacifico-Regular.ttf')
+@font-face
+  font-family: "RobotoCondensed-Light"
+  src: url('./fonts/RobotoCondensed-Light.ttf')
+@font-face
+  font-family: "RobotoCondensed-Regular"
+  src: url('./fonts/RobotoCondensed-Regular.ttf')
+@font-face
+  font-family: "RobotoCondensed-Bold"
+  src: url('./fonts/RobotoCondensed-Bold.ttf')
+/*======= DIVISION =======*/
 
+$logoFont: 'Pacifico', 'sans-serif'
+$fontRegular: 'RobotoCondensed-Light', 'sans-serif'
+$fontMedium: 'RobotoCondensed-Regular', 'sans-serif'
+$fontBold: 'RobotoCondensed-Bold', 'sans-serif'
+
+$primaryColor: #586c91
+$secondaryColor: #f8f8f8
+$bgColor: #dfe7f2
+$darkColor: #283347
+$sloganColor: #8fa4c3
+$iconColor: #8fa4c3
+$favourite: #f0b46f
+
+$lightBeige: #F6F1DE
+$lightestColor:  #EEEEEE
+$lightColor:  #E3E5DA
+$accentRed: #c1121f
+$accentBlue: #407BBF
+$accentGreen: #6EB938
+$darkGreen: #00897D
+$darkBrown: #6D5C26
+$darkRed: #780000
+$darkBlue: #003049
+$shadowColor: #646cffaa
+$blockColor: #E8473F
+$yellowLight: #f7e282
+$yellowDarker: #F7B400
+$logoLight: #F9C875
+$logoPink: #FF8D7D
+
+$h1: 60px
+$h2: 50px
+$h3: 28px
+$h4: 20px
+$h5: 16px
+$h6: 14px
+
+$icon1: 16px
+$icon2: 22px
+$icon3: 30px
+
+@mixin primaryFont
+  font-family: $fontMedium
+  letter-spacing: 0.1px
+@mixin titleFont
+  font-family: $fontBold
+  letter-spacing: 0.5px
+@mixin boxShadow($color)
+  border: 1px solid $color
+  box-shadow: rgba(5, 4, 4, 0.4) 0px 1px 4px 1px
+@mixin boxShadowInner()
+  box-shadow: inset rgba(5, 4, 4, 0.2) 0px 1px 5px 1px

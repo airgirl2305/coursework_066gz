@@ -1,0 +1,111 @@
+@charset "UTF-8";
+/**----------------------
+ * // TODO   СКАЧАТЬ ARIAl
+ * *------------------------**/
+ * @font-face
+ * font-family: "Pacifico"
+ * src: url('./fonts/Pacifico-Regular.ttf') */
+@font-face {
+  font-family: "RobotoCondensed-Light";
+  src: url("./fonts/RobotoCondensed-Light.ttf");
+}
+@font-face {
+  font-family: "RobotoCondensed-Regular";
+  src: url("./fonts/RobotoCondensed-Regular.ttf");
+}
+@font-face {
+  font-family: "RobotoCondensed-Bold";
+  src: url("./fonts/RobotoCondensed-Bold.ttf");
+}
+/*======= DIVISION =======*/
+.header {
+  position: relative;
+  background-color: #6EB938;
+  padding: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+.header__logo {
+  padding: 1.5em;
+  display: flex;
+  align-items: center;
+  width: 17%;
+  will-change: filter;
+  transition: filter 300ms;
+  filter: drop-shadow(0 0 5em #f7e282);
+}
+.header__logo img {
+  height: 80px;
+}
+.header__add-content {
+  height: 2rem;
+  color: #FF8D7D;
+  background-color: #c1121f;
+  border-radius: 10px;
+  border-color: #6D5C26;
+  cursor: pointer;
+  font-family: "RobotoCondensed-Regular", "sans-serif";
+  letter-spacing: 0.1px;
+  font-size: 16px;
+}
+.header__add-post-btn {
+  padding: 0 15px;
+}
+.header__add-post-btn:hover {
+  color: white;
+  background-color: #283347;
+  transition: 0.25s;
+}
+.header__favourites {
+  border-right: 1px solid #283347;
+  border-left: 1px solid #283347;
+  height: 60px;
+  width: 70px;
+  display: block;
+  margin: 0 auto;
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: #8fa4c3;
+  cursor: pointer;
+  line-height: 60px;
+}
+.header__auth {
+  width: 45%;
+}
+.header__auth ul {
+  padding-left: 10px;
+  list-style: none;
+  font-family: "RobotoCondensed-Regular", "sans-serif";
+  letter-spacing: 0.1px;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.header__user-name {
+  font-weight: 600;
+  color: #283347;
+}
+.header__user-name:hover {
+  color: #3a4f76;
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .logo {
+    animation: logo-spin infinite 10s linear;
+  }
+}
+
+/*# sourceMappingURL=Header.css.map */

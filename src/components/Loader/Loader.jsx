@@ -1,8 +1,8 @@
-import style from './Loader.module.css';
+import './Loader.sass';
 export const Loader = () => {
   return (
-    <div className={style.container}>
-      <div className={style.tatam}>
+    <div className="container">
+      <div className="tatam">
         <div />
         <div />
       </div>

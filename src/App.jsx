@@ -1,14 +1,14 @@
-import './App.css'
+import './App.sass'
+import {SignIn} from "./components/Forms/SignIn/SignIn.jsx";
+import {SignUp} from "./components/Forms/SignUp/SignUp.jsx";
 import { Header } from "./components/Header/Header.jsx";
-import { Main } from "./pages/Main/Main.jsx";
+import {UserList} from "./components/UserList/UserList.jsx";
+import { MainPage } from "./pages/MainPage/MainPage.jsx";
 import {Footer} from "./components/Footer/Footer.jsx";
+import { Profile } from "./pages/Profile/Profile.jsx";
 
-// import { Account } from "./pages/Account/Account.jsx";
-// import { UserList } from "./components/UserList/UserList.jsx";
-// import SignUp from "./components/Forms/SignUp/SignUp";
-// import SignIn from "./components/Forms/SignIn/SignIn";
 import { Route, Routes } from "react-router-dom";
-function App() {
+function App(props) {
 
 
   return (
@@ -16,11 +16,12 @@ function App() {
       <Header />
       <div className="container">
         <Routes>
-          <Route path="/" element={<Main />} />
-          {/*<Route path="/signup" element={<SignUp />} />*/}
-          {/*<Route path="/signin" element={<SignIn />} />*/}
-          {/*<Route path="/users" element={<UserList />} />*/}
-          {/*/profile/me*/}
+          <Route path="/" element={<MainPage function={props.users.key_getContent} />} />
+          <Route path="/sign-up" element={<SignUp function={props.users.key_signUp} />} />
+          <Route path="/sign-in" element={<SignIn function={props.users.key_signIn} />} />
+          <Route path="/users" element={<UserList function={props.users.key_getUsers} />} />
+          <Route path="/" element={<h2>Вы в личном кабинете, меню выбора слева</h2>} />
+          <Route path="/profile/*" element={<Profile function={props.users.key_getUser} />} />
         </Routes>
       </div>
       <Footer />

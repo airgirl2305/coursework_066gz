@@ -18,27 +18,17 @@
   src: url("./fonts/RobotoCondensed-Bold.ttf");
 }
 /*======= DIVISION =======*/
-html,
-* {
-  margin: 0;
-  box-sizing: border-box;
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #E8473F;
+  color: #F6F1DE;
+  padding: 20px;
+  font-size: 1.2rem;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-body {
-  background-color: #EEEEEE;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  color: #003049;
-  line-height: 1.5;
-}
-body a, body a:hover {
-  color: #f7e282;
-  text-decoration: none;
-}
-body a:hover {
-  color: #F7B400;
-}
-body .elem__shadow_border {
-  box-shadow: rgba(100, 108, 255, 0.6666666667) 0 1px 4px 1px;
-}
-
-/*# sourceMappingURL=App.css.map */
+/*# sourceMappingURL=Footer.css.map */

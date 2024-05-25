@@ -18,27 +18,5 @@
   src: url("./fonts/RobotoCondensed-Bold.ttf");
 }
 /*======= DIVISION =======*/
-html,
-* {
-  margin: 0;
-  box-sizing: border-box;
-}
 
-body {
-  background-color: #EEEEEE;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  color: #003049;
-  line-height: 1.5;
-}
-body a, body a:hover {
-  color: #f7e282;
-  text-decoration: none;
-}
-body a:hover {
-  color: #F7B400;
-}
-body .elem__shadow_border {
-  box-shadow: rgba(100, 108, 255, 0.6666666667) 0 1px 4px 1px;
-}
-
-/*# sourceMappingURL=App.css.map */
+/*# sourceMappingURL=Comments.css.map */

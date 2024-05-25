@@ -1,16 +1,16 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
-class User
+class Content
 {
     private $id;
-    private $username;
+    private $title;
     private $email;
     private $avatar;
 
-    function __construct($id, $username, $email, $avatar)
+    function __construct($id, $title, $email, $avatar)
     {
         $this->id = $id;
-        $this->username = $username;
+        $this->title = $title;
         $this->email = $email;
         $this->avatar = $avatar;
     }
@@ -18,9 +18,9 @@ class User
     {
         return $this->id;
     }
-    function getName()
+    function getTitle()
     {
-        return $this->username;
+        return $this->title;
     }
 
     function getEmail()
@@ -31,8 +31,8 @@ class User
     {
         return $this->avatar;
     }
-
-    static function addUser($username, $email, $password, $avatar)
+    //Статический метод добавления пользователя в бд
+    static function addUser($title, $email, $password, $avatar)
     {
         global $mysqli;
         $email = mb_strtolower(trim($email));
@@ -44,12 +44,13 @@ class User
         if ($result->num_rows != 0) {
             return json_encode(["result" => "exist"]);
         } else {
-            $mysqli->query("INSERT INTO `users`(`username`, `email`, `password`, `avatar`) VALUES ('$username', '$email', '$password', '$avatar')");
+            $mysqli->query("INSERT INTO `users`(`title`, `email`, `password`, `avatar`) VALUES ('$title', '$email', '$password', '$avatar')");
             return json_encode(["result" => "success"]);
         }
     }
 
-    static function signIn($email, $password) {
+// ================= TASK authorisation with a static class method ================= //
+    static function authUser($email, $password) {
         global $mysqli;
 
         $email = mb_strtolower(trim($email)); // as should be in the db
@@ -66,49 +67,22 @@ class User
         }
 
     }
+// ================= TASK authorisation with a static class method ================= //
 
-// const signOut = async (req, res) => {
-//   res.clearCookie(COOKIE_NAME);
-//   req.session.destroy((err) => {
-//     if (err) return res.sendStatus(500);
-//     return res.sendStatus(200);
-//   });
-// };
-//
-// const checkAuth = async (req, res) => {
-//   try {
-//     const user = await User.findByPk(req.session.user.id);
-//     return res.json({ id: user.id, name: user.name });
-//   } catch (error) {
-//     return res.sendStatus(500);
-//   }
-// };
-
-    static function getUser($user_id) {
+    static function getPic($content_id) {
         global $mysqli;
-        $result = $mysqli->query("SELECT * FROM `users` WHERE `id`='$user_id'");
+        $result = $mysqli->query("SELECT * FROM `content` WHERE `id`='$content_id'");
         $result = $result->fetch_assoc();
         return json_encode($result);
     }
 
     static function getUsers() {
         global $mysqli;
-        $result = $mysqli->query("SELECT `user_id`, `email`, `username`, `avatar`,  FROM `users` WHERE 1");
+        $result = $mysqli->query("SELECT `name`, `surname`, `email`, `id` FROM `users` WHERE 1");
 
         while($row = $result->fetch_assoc()) {
             $users[] = $row;
         }
         return json_encode($users);
-    }
-
-    static function getFavorite($user_id){
-        global $mysqli;
-            //?  выбери всех через favorites таблицу по id
-        $result = $mysqli->query("SELECT * FROM `content` WHERE `id`='$user_id'");
-
-        while ($row = $result->fetch_assoc()) {
-            $favorite_content[] = $row;
-        }
-        return json_encode($favorite_content);
     }
 }
